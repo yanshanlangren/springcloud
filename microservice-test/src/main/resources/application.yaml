@@ -1,0 +1,16 @@
+server:
+  servlet:
+    context-path: /microservice-test
+  port:
+    8080
+spring:
+  application:
+    name: microservice-test
+ribbon:
+  eureka:
+    enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+    fetch-registry: false

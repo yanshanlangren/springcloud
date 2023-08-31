@@ -1,0 +1,31 @@
+server:
+  port:
+    8000
+spring:
+  application:
+    name: eureka-test
+ribbon:
+  eureka:
+    enabled: true
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8001/eureka/
+#
+#    #是否需要想服务中心注册自己
+#    register-with-eureka: false
+#    fetch-registry: false
+#  server:
+#    enable-self-preservation: false
+#    eviction-interval-timer-in-ms: 2000

@@ -1,0 +1,25 @@
+server:
+  port: 8060
+spring:
+  application:
+    name: zuul-test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+    fetch-registry: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+zuul:
+  routes:
+#    自定义指定微服务的访问路径
+#    user-provider: /usercenters/**
+#    忽略指定微服务
+#    ignored-services:  user-provider,consumer-movie
+#    ignored-services: '*'  #使用'*'可忽略所有微服务
+    user-route:
+      service-id: microservice-test
+      path: /microservice-test/**
